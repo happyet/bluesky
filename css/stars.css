@@ -1,0 +1,78 @@
+@-webkit-keyframes alpha-and-omega {
+	0% {background-position:0% 0%}
+	50% {background-position:300000px 0%}
+	100% {background-position:0px 0%}
+}
+@-moz-keyframes alpha-and-omega {
+	0% {background-position:0% 0%}
+	50% {background-position:300000px 0%}
+	100% {background-position:0px 0%}
+}
+@-o-keyframes alpha-and-omega {
+	0% {background-position:0% 0%}
+	50% {background-position:300000px 0%}
+	100% {background-position:0px 0%}
+}
+@-ms-keyframes alpha-and-omega {
+	0% {background-position:0% 0%}
+	50% {background-position:300000px 0%}
+	100% {background-position:0px 0%}
+}
+@keyframes alpha-and-omega {
+	0% {background-position:0% 0%}
+	50% {background-position:300000px 0%}
+	100% {background-position:0px 0%}
+}
+#stars-1,#stars-2,#stars-3,#stars-4,#stars-5 {
+	position:fixed;
+	top:200px;
+	left:0;
+	right:0;
+	height:400px;
+	margin-top:-30px
+}
+#stars-1 {
+	background:url(../images/stars-1.png) repeat 0 0;
+	-webkit-animation:alpha-and-omega 9000s infinite alternate linear;
+	-moz-animation:alpha-and-omega 9000s infinite alternate linear;
+	-ms-animation:alpha-and-omega 9000s infinite alternate linear;
+	-o-animation:alpha-and-omega 9000s infinite alternate linear;
+	animation:alpha-and-omega 9000s infinite alternate linear;
+	top:260px
+}
+#stars-2 {
+	background:url(../images/stars-2.png) repeat 0 0;
+	-webkit-animation:alpha-and-omega 25000s infinite alternate linear;
+	-moz-animation:alpha-and-omega 25000s infinite alternate linear;
+	-ms-animation:alpha-and-omega 25000s infinite alternate linear;
+	-o-animation:alpha-and-omega 25000s infinite alternate linear;
+	animation:alpha-and-omega 25000s infinite alternate linear;
+	top:100px
+}
+#stars-3 {
+	background:url(../images/stars-3.png) repeat 0 0;
+	-webkit-animation:alpha-and-omega 15000s infinite alternate linear;
+	-moz-animation:alpha-and-omega 15000s infinite alternate linear;
+	-ms-animation:alpha-and-omega 15000s infinite alternate linear;
+	-o-animation:alpha-and-omega 15000s infinite alternate linear;
+	animation:alpha-and-omega 15000s infinite alternate linear;
+	top:250px
+}
+#stars-4 {
+	background:url(../images/stars-4.png) repeat 0 0;
+	-webkit-animation:alpha-and-omega 16000s infinite alternate linear;
+	-moz-animation:alpha-and-omega 16000s infinite alternate linear;
+	-ms-animation:alpha-and-omega 16000s infinite alternate linear;
+	-o-animation:alpha-and-omega 16000s infinite alternate linear;
+	animation:alpha-and-omega 16000s infinite alternate linear;
+	top:120px
+}
+#stars-5 {
+	background:url(../images/stars-5.png) repeat 0 0;
+	-webkit-animation:alpha-and-omega 12000s infinite alternate linear;
+	-moz-animation:alpha-and-omega 12000s infinite alternate linear;
+	-ms-animation:alpha-and-omega 12000s infinite alternate linear;
+	-o-animation:alpha-and-omega 12000s infinite alternate linear;
+	animation:alpha-and-omega 12000s infinite alternate linear;
+	top:300px
+}
