@@ -16,9 +16,7 @@ jQuery(document).ready(function($){
 			$(this).hide().css("z-index",-1337)
 		})
 	});
-	$('span.zh_share span').click(function(event) {
-		
-	});
+
 	$('span.zh_share span').each(function(){
 		$(this).click(function(){
 			$(this).next().toggle();

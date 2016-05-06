@@ -9,11 +9,12 @@
 	if($options['side_links6']) $opens['github'] = $options['side_links6'];
 	if($options['side_links7']){ $opens['rss'] = $options['side_links7']; }else{ $opens['rss'] = get_bloginfo('rss2_url');}
 	$num = count($opens);
+	$class = (!empty($options['anousments'])) ? 'has-anous ' : '';
 ?>
 <div id="sidebar" class="clearfix">
 	<div id="sidebar-main">
 		<div id="side-top-wrap">
-			<ul id="side-top" class="list-inline clearfix">
+			<ul id="side-top" class="<?php echo $class; ?>list-inline clearfix">
 				<?php 
 					foreach($opens as $key=>$open){
 						$open = ($key != 'qq') ? $open : 'http://wpa.qq.com/msgrd?v=3&uin=' . $open . '&site=' . get_bloginfo('name') . '&menu=yes';
@@ -38,4 +39,3 @@
 		</div>
 	</div>
 </div>
-<!-- end sidebar -->

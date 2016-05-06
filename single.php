@@ -2,7 +2,7 @@
 	<div id="content">
 		<div class="post_list">
 			<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-				<div <?php post_class() ?> id="post-<?php the_ID(); ?>">
+				<div class="post" id="post-<?php the_ID(); ?>">
 					<?php get_template_part( 'contents/post-author' ); ?>
 					<div class="post_content">
 				            	<?php if ( has_post_thumbnail() ) { ?>
@@ -12,12 +12,16 @@
 						            	</a>
 					            	</div>
 				            	<?php } ?>
-				            	<h1><a href="<?php the_permalink() ?>" rel="bookmark"><?php the_title(); ?></a></h1>
-				            	<ul class="meta clearfix">
-					            	<li class="comments"><?php comments_popup_link(__('<span class="dashicons dashicons-testimonial"></span> 0'), __('<span class="dashicons dashicons-testimonial"></span> 1'), __('<span class="dashicons dashicons-testimonial"></span> %'), '', __('<span class="dashicons dashicons-welcome-comments"></span> 已关闭评论') ); ?></li>
-					            	<li class="date"><span class="dashicons dashicons-clock"></span> <?php the_time('Y-m-d'); ?></li>
-					            	<?php edit_post_link(__('<li><span class="dashicons dashicons-welcome-write-blog"></span> 编辑</li>'), '',' '); ?>		
-				            	</ul>
+				            	<h1><?php the_title(); ?></h1>
+				            	<div class="meta_container">
+												<ul class="meta clearfix">
+													<li class="date"><span class="dashicons dashicons-clock"></span> <?php the_time('Y-m-d'); ?></li>
+													<li><span class="dashicons dashicons-category"></span> <?php the_category(', ') ?></li>
+													<li><?php edit_post_link(__('<span class="dashicons dashicons-welcome-write-blog"></span> 编辑'), '',' '); ?>	</li>
+													<li class="comments"><?php comments_popup_link(__('<span class="dashicons dashicons-testimonial"></span> 0'), __('<span class="dashicons dashicons-testimonial"></span> 1'), __('<span class="dashicons dashicons-testimonial"></span> %'), '', __('<span class="dashicons dashicons-welcome-comments"></span> 已关闭评论') ); ?></li>
+												</ul>
+											</div>
+				         
 				            	<div class="entry clearfix">
 							<?php the_content(); ?>
 						</div>
@@ -36,7 +40,7 @@
 						</div>
 					</div>
 					<div class="tags singletags">
-						<?php the_category(' ') ?> <?php the_tags('', ' ', ''); ?>
+						<?php the_tags('', ' ', ''); ?>
 					</div>
 					<div class="relatepost clearfix">
 						<h3 class="meta-title"><span>相关文章</span></h3>

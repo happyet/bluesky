@@ -14,9 +14,8 @@
 						<h1><?php the_title(); ?></h1>
 						<ul class="meta clearfix">
 							<li class="comments"><?php comments_popup_link(__('<span class="dashicons dashicons-testimonial"></span> 0'), __('<span class="dashicons dashicons-testimonial"></span> 1'), __('<span class="dashicons dashicons-testimonial"></span> %'), '', __('<span class="dashicons dashicons-welcome-comments"></span> 已关闭评论') ); ?></li>
-							<?php edit_post_link(__('<li><span class="dashicons dashicons-welcome-write-blog"></span> 编辑</li>'), '',' '); ?>
 							<li class="date"><span class="dashicons dashicons-clock"></span> <?php the_time('Y-m-d'); ?></li>
-							<li class="views"><span class="dashicons dashicons-heart"></span> 
+							<li class="views"><span class="dashicons dashicons-heart"></span>
 								<?php if(function_exists('the_views')) {
 									the_views();
 								}elseif(function_exists('post_views')) {
@@ -38,5 +37,5 @@
 			<?php endif; ?>
 		</div>
 	</div>
-<?php get_sidebar(); ?>	
+<?php get_sidebar(); ?>
 <?php get_footer(); ?>

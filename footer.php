@@ -2,7 +2,7 @@
 </div>
 	<footer id="footer">
 		<nav class="footer main-navigation">
-			<?php 
+			<?php
 				if(has_nav_menu('footer-menu')){
 					wp_nav_menu( array( 'theme_location' => 'footer-menu','depth'=> 1,'container'=>false,'items_wrap' => '<ul id="foot-nav" class="%2$s">%3$s</ul>' ) );
 				}else{
@@ -31,7 +31,7 @@
 		<?php } ?>
 	</ul>
 </div>
-<?php $options = get_option('hy_options'); if (!$options['star_background']) { ?>
+<?php $options = get_option('hy_options'); if ($options['star_background']) { ?>
 <div id="stars-1"></div><div id="stars-2"></div><div id="stars-3"></div><div id="stars-4"></div><div id="stars-5"></div>
 <?php } ?>
 <div id="star-mask-left"></div>

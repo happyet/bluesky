@@ -1,16 +1,16 @@
 <?php
 // +----------------------------------------------------------------------+
-// | bluesky 3 functions.php									          |
+// | bluesky 3 functions.php							     |
 // +----------------------------------------------------------------------+
-// | Copyright (c) 2016 LMS.IM                                            |
+// | Copyright (c) 2016 LMS.IM                                             |
 // +----------------------------------------------------------------------+
-// | 部分代码收集自网络，由《不亦乐乎》编辑整理，                         |
-// | 使用主题请保留版权链接，谢谢！                                       |
-// | 自娱自乐，不亦乐乎！                                                 |
-// | http://lms.im                                                        |
+// | 部分代码收集自网络，由《不亦乐乎》编辑整理，    |
+// | 使用主题请保留版权链接，谢谢！                                |
+// | 自娱自乐，不亦乐乎！                                                    |
+// | http://lms.im                                                    		    |
 // +----------------------------------------------------------------------+
-// | Authors: 不亦乐乎 <i@lms.im>                                         |
-// | donate:                                                              |
+// | Authors: 不亦乐乎 <i@lms.im>                                      |
+// | donate:                                                                               |
 // +----------------------------------------------------------------------+
 //
 require get_template_directory() . '/includes/custom-header.php';
@@ -18,49 +18,49 @@ require get_template_directory() . '/includes/blueskywidget.php';
 require get_template_directory() . '/includes/update.php';
 if(is_admin()) require get_template_directory() . '/includes/theme-options.php';
 if (function_exists('register_sidebar')) {
-    register_sidebar(array(
-        'name' => '通用侧边栏',
-        'id' => 'main-aside',
-        'description' => '显示在博客各页面的通用侧边栏。',
-        'before_widget' => '<div id="%1$s" class="widget sidebar-box %2$s">',
-        'after_widget' => '</div>',
-        'before_title' => '<h1>',
-        'after_title' => '</h1>',
-    ));
-    register_sidebar(array(
-        'name' => '首页侧边栏',
-        'id' => 'home-aside',
-        'description' => '显示在博客首页的专用侧边栏。',
-        'before_widget' => '<div id="%1$s" class="widget sidebar-box %2$s">',
-        'after_widget' => '</div>',
-        'before_title' => '<h1>',
-        'after_title' => '</h1>',
-    ));
-    register_sidebar(array(
-        'name' => '文章页侧边栏',
-        'id' => 'single-aside',
-        'description' => '显示在博客文章页面的专用侧边栏（含 page 页面）。',
-        'before_widget' => '<div id="%1$s" class="widget sidebar-box %2$s">',
-        'after_widget' => "</div>",
-        'before_title' => '<h1>',
-        'after_title' => '</h1>',
-    ));
-    register_sidebar(array(
-        'name' => '栏目分类页侧边栏',
-        'id' => 'category-aside',
-        'description' => '显示在博客栏目分类页面的专用侧边栏。',
-        'before_widget' => '<div id="%1$s" class="widget sidebar-box %2$s">',
-        'after_widget' => "</div>",
-        'before_title' => '<h1>',
-        'after_title' => '</h1>',
-    ));
+    	register_sidebar(array(
+        	'name' => '通用侧边栏',
+        	'id' => 'main-aside',
+        	'description' => '显示在博客各页面的通用侧边栏。',
+        	'before_widget' => '<div id="%1$s" class="widget sidebar-box %2$s">',
+        	'after_widget' => '</div>',
+        	'before_title' => '<h1>',
+        	'after_title' => '</h1>',
+    	));
+    	register_sidebar(array(
+        	'name' => '首页侧边栏',
+        	'id' => 'home-aside',
+        	'description' => '显示在博客首页的专用侧边栏。',
+        	'before_widget' => '<div id="%1$s" class="widget sidebar-box %2$s">',
+        	'after_widget' => '</div>',
+        	'before_title' => '<h1>',
+        	'after_title' => '</h1>',
+    	));
+    	register_sidebar(array(
+        	'name' => '文章页侧边栏',
+        	'id' => 'single-aside',
+        	'description' => '显示在博客文章页面的专用侧边栏（含 page 页面）。',
+        	'before_widget' => '<div id="%1$s" class="widget sidebar-box %2$s">',
+        	'after_widget' => "</div>",
+        	'before_title' => '<h1>',
+        	'after_title' => '</h1>',
+    	));
+    	register_sidebar(array(
+        	'name' => '栏目分类页侧边栏',
+        	'id' => 'category-aside',
+        	'description' => '显示在博客栏目分类页面的专用侧边栏。',
+        	'before_widget' => '<div id="%1$s" class="widget sidebar-box %2$s">',
+        	'after_widget' => "</div>",
+        	'before_title' => '<h1>',
+        	'after_title' => '</h1>',
+    	));
 }
 
 function bluesky_theme_setup() {
 	load_theme_textdomain( 'bluesky', get_template_directory() . '/languages' );
 	add_editor_style();
 	add_theme_support( 'automatic-feed-links' );
-	add_theme_support( 'post-formats', array( 'image', 'link', 'quote', 'status', 'audio','gallery' ) );
+	add_theme_support( 'post-formats', array( 'image', 'link', 'quote', 'status', 'audio','gallery','video' ) );
 	register_nav_menus( array('header-menu' => '顶部导航', 'footer-menu' => '底部自定义菜单','mobile-menu' => '手机菜单' ));
 	add_theme_support( 'post-thumbnails' );
 	set_post_thumbnail_size(470, 210);
@@ -81,10 +81,10 @@ function bluesky_theme_scripts_styles() {
 	$options = get_option('hy_options');
 	$theme_dir = get_bloginfo('template_directory');
 	wp_deregister_script('jquery');
-    wp_register_script('jquery',  $theme_dir . '/js/jquery-1.11.1.min.js',array(), null, true);
+    	wp_register_script('jquery',  $theme_dir . '/js/jquery-1.11.1.min.js',array(), null, true);
 	wp_enqueue_script('happyet', $theme_dir . '/js/main.js', array('jquery'), null, true);
 	wp_deregister_script('comment-reply');
-    wp_register_script('comment-reply', $theme_dir . '/js/comments-ajax.js', array('jquery') , null, true);
+    	wp_register_script('comment-reply', $theme_dir . '/js/comments-ajax.js', array('jquery') , null, true);
 	if ( is_singular()){
 		wp_localize_script( 'happyet', 'ajax_url', $theme_dir);
 		if(comments_open() && get_option( 'thread_comments' ) ) wp_enqueue_script( 'comment-reply' );
@@ -99,49 +99,49 @@ function bluesky_theme_scripts_styles() {
 }
 add_action( 'wp_enqueue_scripts', 'bluesky_theme_scripts_styles' );
 function cut_str($src_str, $cut_length) {
-    $return_str = '';
-    $i = 0;
-    $n = 0;
-    $str_length = strlen($src_str);
-    while (($n < $cut_length) && ($i <= $str_length)) {
-        $tmp_str = substr($src_str, $i, 1);
-        $ascnum = ord($tmp_str);
-        if ($ascnum >= 224) {
-            $return_str = $return_str . substr($src_str, $i, 3);
-            $i = $i + 3;
-            $n = $n + 2;
-        } elseif ($ascnum >= 192) {
-            $return_str = $return_str . substr($src_str, $i, 2);
-            $i = $i + 2;
-            $n = $n + 2;
-        } elseif ($ascnum >= 65 && $ascnum <= 90) {
-            $return_str = $return_str . substr($src_str, $i, 1);
-            $i = $i + 1;
-            $n = $n + 2;
-        } else {
-            $return_str = $return_str . substr($src_str, $i, 1);
-            $i = $i + 1;
-            $n = $n + 1;
-        }
-    }
-    if ($i < $str_length) {
-        $return_str = $return_str . '';
-    }
-    if (get_post_status() == 'private') {
-        $return_str = $return_str . '（private）';
-    }
-    return $return_str;
+    	$return_str = '';
+    	$i = 0;
+    	$n = 0;
+    	$str_length = strlen($src_str);
+    	while (($n < $cut_length) && ($i <= $str_length)) {
+        	$tmp_str = substr($src_str, $i, 1);
+        	$ascnum = ord($tmp_str);
+        	if ($ascnum >= 224) {
+            		$return_str = $return_str . substr($src_str, $i, 3);
+            		$i = $i + 3;
+            		$n = $n + 2;
+        	} elseif ($ascnum >= 192) {
+            		$return_str = $return_str . substr($src_str, $i, 2);
+            		$i = $i + 2;
+            		$n = $n + 2;
+        	} elseif ($ascnum >= 65 && $ascnum <= 90) {
+            		$return_str = $return_str . substr($src_str, $i, 1);
+            		$i = $i + 1;
+            		$n = $n + 2;
+        	} else {
+            		$return_str = $return_str . substr($src_str, $i, 1);
+            		$i = $i + 1;
+            		$n = $n + 1;
+        	}
+    	}
+    	if ($i < $str_length) {
+        	$return_str = $return_str . '';
+    	}
+    	if (get_post_status() == 'private') {
+        	$return_str = $return_str . '（private）';
+    	}
+    	return $return_str;
 }
 
 function my_profile($contactmethods) {
-    $contactmethods['QQ'] = 'QQ';
-    $contactmethods['weibo'] = '微博';
-    $contactmethods['twitter'] = '推特';
-    $contactmethods['facebook'] = '脸书';
-    unset($contactmethods['aim']);
-    unset($contactmethods['yim']);
-    unset($contactmethods['jabber']);
-    return $contactmethods;
+    	$contactmethods['QQ'] = 'QQ';
+    	$contactmethods['weibo'] = '微博';
+    	$contactmethods['twitter'] = '推特';
+    	$contactmethods['facebook'] = '脸书';
+    	unset($contactmethods['aim']);
+    	unset($contactmethods['yim']);
+    	unset($contactmethods['jabber']);
+    	return $contactmethods;
 }
 add_filter('user_contactmethods', 'my_profile');
 //~ 反解析地址函数

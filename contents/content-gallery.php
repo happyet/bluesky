@@ -1,13 +1,6 @@
 <div <?php post_class() ?> id="post-<?php the_ID(); ?>">
 				<?php if ( is_sticky() && is_home() && ! is_paged() ) : ?><span class="sticky"><span>[置顶]</span></span><?php endif; ?>
-				<div class="author_show">
-					<div class="author_face"><?php echo get_avatar( get_the_author_meta( 'user_email' ), apply_filters( 'author_bio_avatar_size', 60 ) ); ?></div>
-					<div class="author_detail">
-						<p>Posted by: <br><span class="author_name"><?php printf(get_the_author() ); ?></span> <a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>" rel="author" title="去看看TA的作品"><?php the_author_posts(); ?> 篇</a> <?php if ( get_the_author_meta('QQ') ) : ?><a href="http://wpa.qq.com/msgrd?v=3&uin=<?php the_author_meta('QQ'); ?>&site=qq&menu=yes" title="Q我" target="_blank">QQ</a><?php endif; ?></p>
-						<h2><?php if(get_the_author_meta( 'description' ) ){ the_author_meta( 'description' ); }else{ echo '该同志还没添加个人介绍';}; ?></h2>
-					</div>
-					<span class="views"><?php if(function_exists('the_views')) { the_views(); }elseif(function_exists('post_views')) { post_views(); } ?></span>
-				</div>
+				<?php get_template_part( 'contents/post-author' ); ?>
 	<div class="post_content">
 					<h1><a href="<?php the_permalink() ?>" rel="bookmark"><?php the_title(); ?></a></h1>
 					<div class="entry">
